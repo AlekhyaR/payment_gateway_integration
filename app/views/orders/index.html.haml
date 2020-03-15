@@ -1,3 +1,6 @@
+%script(src="https://www.paypal.com/sdk/js?client-id=ARUov7bo9LI6Q7vxGOPWENa_e8udNN2bxOtXHXzr3WYnF7SHX3JDnrhYc5WXajq56oIos-uFysvjIfUT")
+= javascript_pack_tag 'paypal', 'data-turbolinks-track': 'reload'
+= javascript_pack_tag 'changetab', 'data-turbolinks-track': 'reload'
 
 %div
   %h1 List of products
@@ -43,9 +46,17 @@
       %hr
 
 // The selector you specified(#card-elements) applies to no DOM elements that are currently on the page. Make sure the element exists on the page before calling mount()
-
 %script{:src => "https://js.stripe.com/v3/"}
+%script
+  //paypal.Buttons().render('#submit-paypal')
 = javascript_pack_tag 'stripe', 'data-turbolinks-track': 'reload'
+
+:javascript
+  function changeTab() {
+    var newActiveTabID = $('input[name="payment-selection"]:checked').val();
+    $('.paymentSelectionTab').removeClass('active');
+    $('#tab-' + newActiveTabID).addClass('active');
+  }
 
 :css
   #card-element {

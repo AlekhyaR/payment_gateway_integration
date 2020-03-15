@@ -23,8 +23,14 @@
     }
   });
 
+  function changeTab() {
+    var newActiveTabID = $('input[name="payment-selection"]:checked').val();
+    if(newActiveTabID == 'paypal'){
+    };
+    $('.paymentSelectionTab').removeClass('active');
+    $('#tab-' + newActiveTabID).addClass('active');
+  }
 
-  
   var form = document.getElementById('order-details');
   // This will be called when the #submit-stripe button is clicked by the user.
   form.addEventListener('submit', function(event) {
@@ -50,10 +56,7 @@
   });
 }
 
+);                   
 
-  (function changeTab() {
-    var newActiveTabID = $('input[name="payment-selection"]:checked').val();
-    $('.paymentSelectionTab').removeClass('active');
-    $('#tab-' + newActiveTabID).addClass('active');
-  }) 
-);
+
+
