@@ -35,8 +35,4 @@
        }
       }
     }).render('#submit-paypal');
- }
-
-
-
-)
+ }());

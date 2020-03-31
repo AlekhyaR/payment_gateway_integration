@@ -7,6 +7,7 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script(src="https://www.paypal.com/sdk/js?client-id=ARUov7bo9LI6Q7vxGOPWENa_e8udNN2bxOtXHXzr3WYnF7SHX3JDnrhYc5WXajq56oIos-uFysvjIfUT")
     %script{:src => "https://js.stripe.com/v3/"}
   %body
     = yield
